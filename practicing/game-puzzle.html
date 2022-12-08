@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+            border: 5px solid red;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+<img id="img01" src="imgs/nobita-row-1.png" alt="a splitted image" onclick="changeImage01();" />
+<img id="img02" src="imgs/shizuka-row-2.png" alt="a splitted image" onclick="changeImage02();" />
+<img id="img03" src="imgs/doraemon-row-3.png" alt="a splitted image" onclick="changeImage03();" />
+<p id="result" ></p>
+<script>
+    let name = ["nobita", "shizuka", "doraemon"];
+    let srcImage01 = document.getElementById("img01");
+    let srcImage02 = document.getElementById("img02");
+    let srcImage03 = document.getElementById("img03");
+    function changeImage01() {
+
+    for (let i = 0; i < 3; i++) {
+        //generate random number from 1 to 3
+        let random = Math.floor(Math.random() * 3) ;
+        srcImage01.src = `imgs/${name[random]}-row-1.png`;
+    }
+        completeCheck();
+    }
+    function changeImage02() {
+        for (let i = 0; i < 3; i++) {
+            //generate random number from 1 to 3
+            let random = Math.floor(Math.random() * 3) ;
+            srcImage02.src = `imgs/${name[random]}-row-2.png`;
+        }
+        completeCheck();
+    }
+    function changeImage03() {
+        for (let i = 0; i < 3; i++) {
+            //generate random number from 1 to 3
+            let random = Math.floor(Math.random() * 3) ;
+            srcImage03.src = `imgs/${name[random]}-row-3.png`;
+        }
+        completeCheck();
+    }
+    function completeCheck() {
+      if( srcImage01.src.slice(0, -5) === srcImage02.src.slice(0, -5) && srcImage02.src.slice(0, -5) === srcImage03.src.slice(0, -5)){
+          document.getElementById("img01").style.border = "5px solid yellow";
+          document.getElementById("img02").style.border = "5px solid yellow";
+          document.getElementById("img03").style.border = "5px solid yellow";
+          document.getElementById("result").innerHTML = "Đúng rồi!";
+        }
+        if( srcImage01.src.slice(0, -5) !== srcImage02.src.slice(0, -5) || srcImage02.src.slice(0, -5) !== srcImage03.src.slice(0, -5) || srcImage03.src.slice(0, -5) !== srcImage01.src.slice(0, -5) ){
+            document.getElementById("img01").style.border = "5px solid red";
+            document.getElementById("img02").style.border = "5px solid red";
+            document.getElementById("img03").style.border = "5px solid red";
+            document.getElementById("result").innerHTML = "Chưa được!";
+        }
+    }
+</script>
+</body>
+</html>

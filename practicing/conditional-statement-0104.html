@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let userInputNumber1 = prompt("Enter an integer");
+  let userInputNumber2 = prompt("Enter an integer");
+  let userInputNumber3 = prompt("Enter an integer");
+  let number1 = parseInt(userInputNumber1);
+  let number2 = parseInt(userInputNumber2);
+  let number3 = parseInt(userInputNumber3);
+  let biggerOne;
+  if (number1 > number2) {
+    biggerOne = number1;
+    if (number1 < number3)
+        biggerOne = number3;
+  } else {
+    biggerOne = number2;
+    if (number2 < number3)
+        biggerOne = number3;
+  }
+  alert("The biggest number among them is: " + biggerOne);
+
+</script>
+</body>
+</html>

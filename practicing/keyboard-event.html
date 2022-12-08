@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Key Board Event</title>
+    <style>
+        img {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<img id="nobita" src="imgs/nobita.png" alt="nobita" width="50%" height="50%">
+
+<script>
+    let element = document.getElementById("nobita");
+    function init () {
+        element.style.position = "relative";
+        element.style.left = 0 + "px";
+        element.style.top = 0 + "px";
+    }
+    window.onload = init;
+    function leftArrowPressed() {
+       element.style.left = parseInt(element.style.left) - 5 + "px";
+    }
+    function upArrowPressed() {
+        element.style.top = parseInt(element.style.top) - 5 + "px";
+    }
+    function rightArrowPressed() {
+        element.style.left = parseInt(element.style.left) + 5 + "px";
+    }
+    function downArrowPressed() {
+        element.style.top = parseInt(element.style.top) + 5 + "px";
+    }
+    function moveSelection(e){
+        switch (e.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+    addEventListener('keydown', moveSelection)
+</script>
+</body>
+</html>

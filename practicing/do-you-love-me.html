@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me?</title>
+    <style>
+        button {
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Do you love me?</h1>
+<button id="yesButton" onclick="showHeart()">YES</button>
+<button id="noButton" onclick="moveButton()">NO</button>
+<script>
+function showHeart(){
+    alert("♥♥♥♥♥");
+}
+let randomHeight = 0;
+let randomWidth = 0;
+function moveButton(){
+    let noButton = document.getElementById("noButton");
+    randomHeight = Math.floor(Math.random()*window.innerHeight);
+    randomWidth = Math.floor(Math.random()*window.innerWidth)
+    noButton.style.left =  randomWidth + "px";
+    noButton.style.top =  randomHeight + "px";
+}
+</script>
+</body>
+</html>

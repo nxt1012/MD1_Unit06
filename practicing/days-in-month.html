@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="userInput"></label>
+<input id="userInput" type="text">
+<button type="button" onclick="calculateDaysInMonth()">Tính số ngày</button>
+<p id="result"></p>
+<script>
+  function calculateDaysInMonth() {
+    let userInputValue = document.getElementById("userInput").value;
+    let userInput = parseInt(userInputValue);
+    switch (userInput) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        document.getElementById("result").innerHTML = `<p id="result">Tháng ${userInput} có 31 ngày</p>`;
+        break;
+      case 2:
+        document.getElementById("result").innerHTML = `<p id="result">Tháng 2 có 28 ngày với năm thường và 29 ngày với năm nhuận</p>`;
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        document.getElementById("result").innerHTML = `<p id="result">Tháng ${userInput} có 30 ngày</p>`;
+        break;
+      default:
+        document.getElementById("result").innerHTML = `<p id="result">Không có tháng này!</p>`;
+    }
+  }
+</script>
+</body>
+</html>

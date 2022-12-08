@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Age Evaluation</title>
+</head>
+<body>
+<form name="Age Evaluation">
+  <label for="age">Nhập vào tuổi học sinh</label><br>
+  <input id="age" type="text">
+  <input type="button" value="Xét tuổi" onclick="evaluateAge()">
+  <p id="result"></p>
+</form>
+<script>
+  let qualifiedAge = 16;
+  function evaluateAge() {
+      let studentAge = +document.getElementById("age").value;
+    if (studentAge < qualifiedAge) {
+      document.getElementById("result").innerHTML = `Học sinh ${studentAge} tuổi không đủ điều kiện vào học lớp 10!`;
+    } else
+      document.getElementById("result").innerHTML = `Học sinh ${studentAge} tuổi đủ điều kiện vào học lớp 10!`;
+  }
+</script>
+</body>
+</html>
